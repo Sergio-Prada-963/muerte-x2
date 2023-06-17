@@ -4,11 +4,26 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$proveedor = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/proveedor.php?op=GetAll";
+$salida = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/salida.php?op=GetAll";
+$producto = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/producto.php?op=GetAll";
+$obra = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/obra.php?op=GetAll";
+$empleado = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/empleado.php?op=GetAll";
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $proveedor);
+curl_setopt($curl, CURLOPT_URL, $salida);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
-$idProveedor = json_decode(curl_exec($curl));
+$idSalida = json_decode(curl_exec($curl));
+
+curl_setopt($curl, CURLOPT_URL, $producto);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+$idProducto = json_decode(curl_exec($curl));
+
+curl_setopt($curl, CURLOPT_URL, $obra);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+$idObra = json_decode(curl_exec($curl));
+
+curl_setopt($curl, CURLOPT_URL, $empleado);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+$idEmpleado = json_decode(curl_exec($curl));
 ?>
 
 <div>

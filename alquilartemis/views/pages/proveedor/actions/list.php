@@ -1,4 +1,4 @@
-<?php $url = "http://localhost/ArTeM02-062/php/muerte%20x2/apirest/controles/proveedor.php?op=GetAll"; 
+<?php $url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/proveedor.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -23,7 +23,7 @@
                   <tbody>
                     <?php foreach($ouput as $out){ ?>
                   <tr>
-                    <td><?= $out->nombre; ?></td>
+                    <td><?= $out->nombreProveedor; ?></td>
                     <td><?= $out->direccion; ?></td>
                     <td><?= $out->telefono; ?></td>
                     <td><?= $out->encargado; ?></td>

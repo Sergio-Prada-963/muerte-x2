@@ -40,7 +40,7 @@
 </div>
 
 <?php 
-$url = "http://localhost/ArTeM02-062/php/muerte%20x2/apirest/controles/empleado.php?op=insert"; 
+$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/empleado.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [

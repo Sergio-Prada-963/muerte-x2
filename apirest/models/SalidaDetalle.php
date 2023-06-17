@@ -8,13 +8,13 @@ ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
 require_once ("../config/Conectar.php");
-class Proveedor extends Conectar{
+class SalidaD extends Conectar{
 
-    public function get_proveedor(){
+    public function get_salidaD(){
         try {
             $conectar=parent::Conexion();
             parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM proveedor");
+            $stm=$conectar->prepare("SELECT * FROM salidaDetalle INNER JOIN salida ON salida.id_salida = salidaDetalle.id_salida INNER JOIN producto ON producto.id_producto = salidaDetalle.id_producto INNER JOIN obra ON obra.id_obra = salidaDetalle.id_obra INNER JOIN empleado ON empleado.id_empleado = salidaDetalle.id_empleado");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,16 +36,22 @@ class Proveedor extends Conectar{
     //     }
     // }
 
-    public function insert_proveedor($nombre,$direccion,$telefono, $encargado, $sector){
+    public function insert_salidaD($cantidad_salida,$cantidad_propia,$cantidad_subalquilada,$valor_unidad,$fecha_standBy,$estado,$valorTotal,$id_salida,$id_producto,$id_obra,$id_empleado){
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO proveedor(nombreProveedor,direccion,telefono,encargado,sector) VALUES(?,?,?,?,?)";
+        $stm="INSERT INTO salidaDetalle(cantidad_salida,cantidad_propia,cantidad_subalquilada,valor_unidad,fecha_standBy,estado,valorTotal,id_salida,id_producto,id_obra,id_empleado) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $stm=$conectar->prepare($stm);
-        $stm->bindValue(1,$nombre);
-        $stm->bindValue(2,$direccion);
-        $stm->bindValue(3,$telefono);
-        $stm->bindValue(4,$encargado);
-        $stm->bindValue(5,$sector);
+        $stm->bindValue(1,$cantidad_salida);
+        $stm->bindValue(2,$cantidad_propia);
+        $stm->bindValue(3,$cantidad_subalquilada);
+        $stm->bindValue(4,$valor_unidad);
+        $stm->bindValue(5,$fecha_standBy);
+        $stm->bindValue(6,$estado);
+        $stm->bindValue(7,$valorTotal);
+        $stm->bindValue(8,$id_salida);
+        $stm->bindValue(9,$id_producto);
+        $stm->bindValue(10,$id_obra);
+        $stm->bindValue(11,$id_empleado);
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 

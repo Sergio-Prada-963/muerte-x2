@@ -34,7 +34,7 @@ CREATE TABLE `cliente` (
   `edad` int DEFAULT NULL,
   `correo` varchar(80) DEFAULT NULL,
   `direccion` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `cliente`
@@ -59,7 +59,7 @@ CREATE TABLE `empleado` (
   `correo` varchar(80) DEFAULT NULL,
   `direccion` varchar(80) DEFAULT NULL,
   `salario` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `empleado`
@@ -83,7 +83,7 @@ CREATE TABLE `entrada` (
   `id_salida` int DEFAULT NULL,
   `id_empleado` int DEFAULT NULL,
   `id_cliente` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `entrada_detalle` (
   `id_entrada` int DEFAULT NULL,
   `id_producto` int DEFAULT NULL,
   `id_obra` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE `inventario` (
   `fecha_inventario` int DEFAULT NULL,
   `tipo_operacion` varchar(80) DEFAULT NULL,
   `id_producto` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,7 @@ CREATE TABLE `liquidacion` (
   `indemnizacion` varchar(50) DEFAULT NULL,
   `seguridad_social` varchar(50) DEFAULT NULL,
   `id_cliente` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -147,7 +147,7 @@ CREATE TABLE `obra` (
   `direccion` varchar(80) DEFAULT NULL,
   `terreno_metros` int DEFAULT NULL,
   `id_cliente` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE `producto` (
   `precio_unitario` int DEFAULT NULL,
   `stock` int DEFAULT NULL,
   `id_proveedor` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `producto`
@@ -185,7 +185,7 @@ CREATE TABLE `proveedor` (
   `telefono` int DEFAULT NULL,
   `encargado` varchar(50) DEFAULT NULL,
   `sector` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Dumping data for table `proveedor`
@@ -211,7 +211,7 @@ CREATE TABLE `salida` (
   `observaciones` varchar(50) DEFAULT NULL,
   `id_cliente` int DEFAULT NULL,
   `id_empleado` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -231,7 +231,7 @@ CREATE TABLE `salida_detalle` (
   `id_producto` int DEFAULT NULL,
   `id_obra` int DEFAULT NULL,
   `id_empleado` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Indexes for dumped tables

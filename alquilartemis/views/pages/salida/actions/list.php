@@ -1,4 +1,4 @@
-<?php $url = "http://localhost/SkylAb-145/Proyects/psychologi/apirest/controles/campers.php?op=GetAll"; 
+<?php $url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/salida.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -13,21 +13,29 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Nombre</th>
-                    <th>Promedio</th>
-                    <th>Nivel Ingles</th>
-                    <th>Especialidad</th>
-                    <th>Nota Ser</th>
+                    <th>Fecha Salida</th>
+                    <th>Hora Salida</th>
+                    <th>SubTotal Peso</th>
+                    <th>Placa Transporte</th>
+                    <th>Observaciones</th>
+                    <th>Id Cliente</th>
+                    <th>Nomrbe Cliente</th>
+                    <th>Id Empleado</th>
+                    <th>Nombre Empleado</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php foreach($ouput as $out){ ?>
                   <tr>
+                    <td><?= $out->fecha_salida; ?></td>
+                    <td><?= $out->hora_salida; ?></td>
+                    <td><?= $out->subtotal_peso; ?></td>
+                    <td><?= $out->placa_transporte; ?></td>
+                    <td><?= $out->observaciones; ?></td>
+                    <td><?= $out->id_cliente; ?></td>
                     <td><?= $out->nombre; ?></td>
-                    <td><?= $out->promedio; ?></td>
-                    <td><?= $out->nivelIngles; ?></td>
-                    <td><?= $out->especialidad; ?></td>
-                    <td><?= $out->Ser; ?></td>
+                    <td><?= $out->id_empleado; ?></td>
+                    <td><?= $out->nombreEmpleado; ?></td>
                   </tr>
                   <?php } ?>
                   </tbody>

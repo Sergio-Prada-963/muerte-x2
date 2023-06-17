@@ -8,13 +8,13 @@ ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
 require_once ("../config/Conectar.php");
-class Proveedor extends Conectar{
+class Salida extends Conectar{
 
-    public function get_proveedor(){
+    public function get_salida(){
         try {
             $conectar=parent::Conexion();
             parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM proveedor");
+            $stm=$conectar->prepare("SELECT * FROM salida INNER JOIN cliente ON cliente.id_cliente = salida.id_cliente INNER JOIN empleado ON empleado.id_empleado = salida.id_empleado");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,16 +36,18 @@ class Proveedor extends Conectar{
     //     }
     // }
 
-    public function insert_proveedor($nombre,$direccion,$telefono, $encargado, $sector){
+    public function insert_salida($fecha_salida, $hora_salida, $subtotal_peso, $placa_transporte, $observaciones, $id_cliente, $id_empleado){
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO proveedor(nombreProveedor,direccion,telefono,encargado,sector) VALUES(?,?,?,?,?)";
+        $stm="INSERT INTO salida(fecha_salida,hora_salida,subtotal_peso,placa_transporte,observaciones,id_cliente,id_empleado) VALUES(?,?,?,?,?,?,?)";
         $stm=$conectar->prepare($stm);
-        $stm->bindValue(1,$nombre);
-        $stm->bindValue(2,$direccion);
-        $stm->bindValue(3,$telefono);
-        $stm->bindValue(4,$encargado);
-        $stm->bindValue(5,$sector);
+        $stm->bindValue(1,$fecha_salida);
+        $stm->bindValue(2,$hora_salida);
+        $stm->bindValue(3,$subtotal_peso);
+        $stm->bindValue(4,$placa_transporte);
+        $stm->bindValue(5,$observaciones);
+        $stm->bindValue(6,$id_cliente);
+        $stm->bindValue(7,$id_empleado);
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
 

@@ -1,4 +1,4 @@
-<?php $url = "http://localhost/SkylAb-145/Proyects/psychologi/apirest/controles/psycologas.php?op=GetAll"; 
+<?php $url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/obra.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -13,17 +13,27 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Especialidad</th>
+                    <th>Nombre Obra</th>
+                    <th>Constructora</th>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                    <th>Direccion</th>
+                    <th>Terreno Metros</th>
+                    <th>Id Cliente</th>
+                    <th>Nombre Cliente</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php foreach($ouput as $out){ ?>
                   <tr>
+                    <td><?= $out->obra; ?></td>
+                    <td><?= $out->constructora; ?></td>
+                    <td><?= $out->tipo; ?></td>
+                    <td><?= $out->descripcion; ?></td>
+                    <td><?= $out->direccion; ?></td>
+                    <td><?= $out->terreno_metros; ?></td>
+                    <td><?= $out->id_cliente; ?></td>
                     <td><?= $out->nombre; ?></td>
-                    <td><?= $out->especialidad; ?></td>
-                    <td><?= $out->edad; ?></td>
                   </tr>
                   <?php } ?>
                   </tbody>

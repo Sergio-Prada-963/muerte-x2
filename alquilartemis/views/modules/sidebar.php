@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-ligth-orange elevation-5">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link navbar-orange ">
-      <img src="vistas/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="views/assets/img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Alquilartemis</span>
     </a>
 
@@ -10,10 +10,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="vistas/assets/img/angie.jpeg" class="img-circle elevation-2" alt="User Image">
+          <img src="views/assets/img/perfil.jpg" class="img-circle elevation-3" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pepito Perez</a>
+          <p class="d-block">Pepito Perez</p>
         </div>
       </div>
 
@@ -26,7 +26,7 @@
                with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-              <a href="/ArTeM02-062/php/muerte%20x2/alquilartemis" class="nav-link <?php if($urlArray[5]=='') : ?> active <?php endif ?>">
+              <a href="/xampp/var/www/html/php/muerte-x2/alquilartemis" class="nav-link <?php if($urlArray[5]=='') : ?> active <?php endif ?>">
                   <i class="nav-icon far fa-user"></i>
                   <p>
                       Home
@@ -80,22 +80,34 @@
            </li>         
            
            <li class="nav-item">
-               <a href="./salida" class="nav-link <?php if($urlArray[5]=='salidas') : ?> active <?php endif ?>">
-                   <i class="nav-icon far fa-user"></i>
-                   <p>
-                       Salidas
-                   </p>
-               </a>
-           </li>   
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Alquileres
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                   <a href="./salida" class="nav-link <?php if($urlArray[5]=='salidas') : ?> active <?php endif ?>">
+                       <i class="nav-icon far fa-user"></i>
+                       <p>
+                           Salidas
+                       </p>
+                   </a>
+                </li> 
+                <li class="nav-item">
+                    <a href="./salidaDetalle" class="nav-link <?php if($urlArray[5]=='salidaDetalle') : ?> active <?php endif ?>">
+                       <i class="nav-icon far fa-user"></i>
+                       <p>Salida Detalle</p>
+                    </a>
+                </li> 
+            </ul>
+           </li>
 
-           <li class="nav-item">
-               <a href="./salidaDetalle" class="nav-link <?php if($urlArray[5]=='salidaDetalle') : ?> active <?php endif ?>">
-                   <i class="nav-icon far fa-user"></i>
-                   <p>
-                       Salida Detalle
-                   </p>
-               </a>
-           </li>   
+             
+
+             
           
         </ul>
       </nav>

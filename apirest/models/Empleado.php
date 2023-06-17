@@ -23,23 +23,23 @@ class Empleado extends Conectar{
         }
         
     }
-    public function get_empleado_id($id){
-        try {
-            $conectar=parent::Conexion();
-            parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM empleado WHERE id=?");
-            $stm->bindValue(1,$id);
-            $stm->execute();
-            return $stm->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
+    // public function get_empleado_id($id){
+    //     try {
+    //         $conectar=parent::Conexion();
+    //         parent::set_name();
+    //         $stm=$conectar->prepare("SELECT * FROM empleado WHERE id=?");
+    //         $stm->bindValue(1,$id);
+    //         $stm->execute();
+    //         return $stm->fetchAll(PDO::FETCH_ASSOC);
+    //     } catch (Exception $e) {
+    //         return $e->getMessage();
+    //     }
+    // }
 
     public function insert_empleado($nombre,$documento,$cargo, $edad, $correo, $direccion, $salario){
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO empleado(nombre, documento, cargo, edad, correo, direccion, salario) VALUES(?,?,?,?,?,?,?)";
+        $stm="INSERT INTO empleado(nombreEmpleado, documento, cargo, edad, correo, direccion, salario) VALUES(?,?,?,?,?,?,?)";
         $stm=$conectar->prepare($stm);
         $stm->bindValue(1,$nombre);
         $stm->bindValue(2,$documento);

@@ -14,7 +14,7 @@ class Producto extends Conectar{
         try {
             $conectar=parent::Conexion();
             parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM producto INNER JOIN proveedor ON proveedor.id_proveedor = producto.id_producto");
+            $stm=$conectar->prepare("SELECT * FROM producto INNER JOIN proveedor ON proveedor.id_proveedor = producto.id_proveedor");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
 
@@ -23,18 +23,18 @@ class Producto extends Conectar{
         }   
     }
 
-    public function get_producto_id($id_producto){
-        try {
-            $conectar=parent::Conexion();
-            parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM producto WHERE id_producto=? INNER JOIN proveedor ON proveedor.id_proveedor = producto.id_producto");
-            $stm->bindValue(1,$id_producto);
-            $stm->execute();
-            return $stm->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
+    // public function get_producto_id($id_producto){
+    //     try {
+    //         $conectar=parent::Conexion();
+    //         parent::set_name();
+    //         $stm=$conectar->prepare("SELECT * FROM producto WHERE id_producto=? INNER JOIN proveedor ON proveedor.id_proveedor = producto.id_producto");
+    //         $stm->bindValue(1,$id_producto);
+    //         $stm->execute();
+    //         return $stm->fetchAll(PDO::FETCH_ASSOC);
+    //     } catch (Exception $e) {
+    //         return $e->getMessage();
+    //     }
+    // }
 
     public function insert_producto($nombre,$precio_unitario,$stock, $id_proveedor){
         $conectar=parent::Conexion();

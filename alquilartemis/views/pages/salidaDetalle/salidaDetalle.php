@@ -2,12 +2,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Clinic history</h1>
+            <h1>Salidas Detalles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Clinic history</li>
+              <li class="breadcrumb-item active">Salidas Detalles</li>
             </ol>
           </div>
         </div>
@@ -15,6 +15,8 @@
     </section>
 
     <!-- Main content -->
+    <?php require "actions/list.php"; ?>
+
     <section class="content">
 
       <div class="container-fluid">
@@ -23,8 +25,7 @@
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Title</h3>
-
+                <h3 class="card-title">Detalles de Salidas</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
@@ -35,7 +36,7 @@
                 </div>
               </div>
               <div class="card-body">
-                Start creating your amazing application!
+                <?php require "actions/new.php"; ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">

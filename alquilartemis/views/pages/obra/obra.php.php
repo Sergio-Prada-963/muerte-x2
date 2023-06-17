@@ -2,12 +2,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Psychologists</h1>
+            <h1>Obras</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Psychologists</li>
+              <li class="breadcrumb-item active">Obras</li>
             </ol>
           </div>
           
@@ -30,7 +30,7 @@
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Añadir Nueva Psicologa</h3>
+                <h3 class="card-title">Añadir Nueva Obra</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -46,7 +46,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                Bienvenida...
+                Algunas Obras...
               </div>
               <!-- /.card-footer-->
             </div>
