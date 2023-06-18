@@ -14,7 +14,7 @@ class SalidaD extends Conectar{
         try {
             $conectar=parent::Conexion();
             parent::set_name();
-            $stm=$conectar->prepare("SELECT * FROM salidaDetalle INNER JOIN salida ON salida.id_salida = salidaDetalle.id_salida INNER JOIN producto ON producto.id_producto = salidaDetalle.id_producto INNER JOIN obra ON obra.id_obra = salidaDetalle.id_obra INNER JOIN empleado ON empleado.id_empleado = salidaDetalle.id_empleado");
+            $stm=$conectar->prepare("SELECT * FROM salida_detalle INNER JOIN salida ON salida.id_salida = salida_detalle.id_salida INNER JOIN producto ON producto.id_producto = salida_detalle.id_producto INNER JOIN obra ON obra.id_obra = salida_detalle.id_obra INNER JOIN empleado ON empleado.id_empleado = salida_detalle.id_empleado");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
 
@@ -39,7 +39,7 @@ class SalidaD extends Conectar{
     public function insert_salidaD($cantidad_salida,$cantidad_propia,$cantidad_subalquilada,$valor_unidad,$fecha_standBy,$estado,$valorTotal,$id_salida,$id_producto,$id_obra,$id_empleado){
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO salidaDetalle(cantidad_salida,cantidad_propia,cantidad_subalquilada,valor_unidad,fecha_standBy,estado,valorTotal,id_salida,id_producto,id_obra,id_empleado) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        $stm="INSERT INTO salida_detalle(cantidad_salida,cantidad_propia,cantidad_subalquilada,valor_unidad,fecha_standBy,estado,valorTotal,id_salida,id_producto,id_obra,id_empleado) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $stm=$conectar->prepare($stm);
         $stm->bindValue(1,$cantidad_salida);
         $stm->bindValue(2,$cantidad_propia);

@@ -28,30 +28,65 @@ $idEmpleado = json_decode(curl_exec($curl));
 
 <div>
     <div class="card-header">
-      <h3 class="card-title">Añadir producto</h3>
+      <h3 class="card-title">Añadir Detalles de salida</h3>
     </div>
     <form action="" method="post">
         <div class="card-body">
           <div class="form-group">
-            <label for="exampleInputEmail1">Nombre</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Nombre" name="nombre">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPrecio_unitario">Precio unitario</label>
-            <input type="number" class="form-control" id="exampleInputPrecio_unitario" placeholder="Ingrese precio unitario" name="precio_unitario">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputStock">stock</label>
-            <input type="number" class="form-control" id="exampleInputStock" placeholder="Ingrese Stock" name="stock">
-          </div>
-          <div class="form-group">
-            <label for="id_proveedor">Proveedor</label>
-            <select name="id_proveedor" id="proveedor">
-            <?php foreach($idProveedor as $id){ ?>
-              <option value="<?= $id->id_proveedor ?>"><?= $id->nombreProveedor ?></option>
+            <label for="salida">Elija la salida a añadir detalles</label>
+           <select name="id_salida" id="salida">
+            <?php foreach($idSalida as $id) { ?>
+            <option value="<?= $id->id_salida; ?>"><?= $id->id_salida; ?></option>
             <?php } ?>
-              <option value=""></option>
+           </select>
+          </div>
+          <div class="form-group">
+            <label for="producto">Elija el Producto</label>
+            <select name="id_producto" id="producto">
+              <?php foreach($idProducto as $id) { ?>
+                <option value="<?= $id->id_producto; ?>"><?= $id->nombre; ?></option>
+              <?php } ?>
+           </select>
+          </div>
+          <div class="form-group">
+            <label for="obra">Elija la Obra</label>
+            <select name="id_obra" id="obra">
+              <?php foreach($idObra as $id) { ?>
+                <option value="<?= $id->id_obra; ?>"><?= $id->obra; ?></option>
+              <?php } ?>
+           </select>
+          </div>
+          <div class="form-group">
+            <label for="empleado">Empleado que realiza el servicio</label>
+            <select name="id_empleado" id="empleado">
+            <?php foreach($idEmpleado as $id){ ?>
+              <option value="<?= $id->id_empleado; ?>"><?= $id->nombreEmpleado; ?></option>
+            <?php } ?>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="cantidadS">Cantidad Salida</label>
+            <input type="number" class="form-control" id="cantidadS" placeholder="Enter cantidad de Salida" name="cantidad_salida">
+          </div>
+          <div class="form-group">
+            <label for="cantidad_propia">Cantidad Propia de la Empresa</label>
+            <input type="number" class="form-control" id="cantidad_propia" placeholder="Enter Cantidad Propia" name="cantidad_propia">
+          </div>
+          <div class="form-group">
+            <label for="cantidad_subalquilada">Cantidad Subalquilada por otra Empresa</label>
+            <input type="number" class="form-control" id="cantidad_subalquilada" placeholder="Enter cantidad subalquilada" name="cantidad_subalquilada">
+          </div>
+          <div class="form-group">
+            <label for="valor_unidad">Valor Unitario del producto</label>
+            <input type="number" class="form-control" id="valor_unidad" placeholder="Enter valor Unitario" name="valor_unidad">
+          </div>
+          <div class="form-group">
+            <label for="fecha_standBy">Fecha StandBy de la Salida</label>
+            <input type="date" class="form-control" id="fecha_standBy" placeholder="Enter fecha standBy" name="fecha_standBy">
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado del producto o salida</label>
+            <input type="text" class="form-control" id="estado" placeholder="Enter estado" name="estado">
           </div>
           <div class="form-check">
             <input type="submit" class="btn btn-primary" name="guardar" value="Guardar">
@@ -61,15 +96,21 @@ $idEmpleado = json_decode(curl_exec($curl));
 </div>
 
 <?php 
-$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/producto.php?op=insert"; 
+$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/salidaDetalle.php?op=insert"; 
 if(isset($_POST['guardar'])){
-
+$total = ($_POST['cantidad_salida'] + $_POST['valor_unidad']);
 $datos = [
-    'nombre' => $_POST['nombre'],
-    'precio_unitario' => $_POST['precio_unitario'],
-    'stock' => $_POST['stock'],
-    'id_proveedor' => $_POST['id_proveedor']
-
+    'id_salida' => $_POST['id_salida'],
+    'id_producto' => $_POST['id_producto'],
+    'id_obra' => $_POST['id_obra'],
+    'id_empleado' => $_POST['id_empleado'],
+    'cantidad_salida' => $_POST['cantidad_salida'],
+    'cantidad_propia' => $_POST['cantidad_propia'],
+    'cantidad_subalquilada' => $_POST['cantidad_subalquilada'],
+    'valor_unidad' => $_POST['valor_unidad'],
+    'fecha_standBy' => $_POST['fecha_standBy'],
+    'estado' => $_POST['estado'],
+    'valorTotal' => $total
 ];
 
 $curl = curl_init();
