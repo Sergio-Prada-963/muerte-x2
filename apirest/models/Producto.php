@@ -77,16 +77,16 @@ class Producto extends Conectar{
 
     } */
     
-    /* public function delete_camper($id){
+    public function delete_producto($id_producto){
         $conectar=parent::conexion();
         parent::set_name();
-        $sql="DELETE FROM pacientes WHERE id=?";
+        $sql="DELETE FROM producto WHERE id_producto=?";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1,$id);
+        $sql->bindValue(1,$id_producto);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
 
-    } */
+    }
 
 }
 

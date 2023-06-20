@@ -40,7 +40,7 @@
 </div>
 
 <?php 
-$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/empleado.php?op=insert"; 
+$url = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [
@@ -61,8 +61,6 @@ $curl = curl_init();
     $response = curl_exec($curl);
     curl_close($curl);
     var_dump($response);
-
-
 }
 ?>
 

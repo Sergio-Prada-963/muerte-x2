@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2023 a las 02:36:13
+-- Tiempo de generación: 20-06-2023 a las 06:46:45
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -29,21 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
-  `nombre` varchar(80) DEFAULT NOT NULL,
-  `documento` int(11) DEFAULT NOT NULL,
-  `edad` int(11) DEFAULT NOT NULL,
-  `correo` varchar(80) DEFAULT NOT NULL,
-  `direccion` varchar(80) DEFAULT NOT NULL
-);
-
---
--- Volcado de datos para la tabla `cliente`
---
-
-INSERT INTO `cliente` (`id_cliente`, `nombre`, `documento`, `edad`, `correo`, `direccion`) VALUES
-(1, 'pepe', 123456, 30, 'pepe@gmail.com', 'cra123'),
-(2, 'Juann', 123546, 30, 'pepe@gmail.com', 'cra123'),
-(3, 'Jhoan', 15487, 35, 'jhoan@gmail..com', 'cra741');
+  `nombre` varchar(80) NOT NULL,
+  `documento` int(11) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `correo` varchar(80) NOT NULL,
+  `direccion` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,15 +51,7 @@ CREATE TABLE `empleado` (
   `correo` varchar(80) DEFAULT NULL,
   `direccion` varchar(80) DEFAULT NULL,
   `salario` int(11) DEFAULT NULL
-);
-
---
--- Volcado de datos para la tabla `empleado`
---
-
-INSERT INTO `empleado` (`id_empleado`, `nombreEmpleado`, `documento`, `cargo`, `edad`, `correo`, `direccion`, `salario`) VALUES
-(1, 'Juan', 10121, 'cajero', 20, 'juan@gmail.com', 'cra 123', 20),
-(2, 'Marce', 123456, 'asistente', 25, 'marce@gmail.com', 'cra123', 25);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,7 +67,7 @@ CREATE TABLE `entrada` (
   `id_salida` int(11) DEFAULT NULL,
   `id_empleado` int(11) DEFAULT NULL,
   `id_cliente` int(11) DEFAULT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -100,7 +83,7 @@ CREATE TABLE `entrada_detalle` (
   `id_entrada` int(11) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
   `id_obra` int(11) DEFAULT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -109,6 +92,7 @@ CREATE TABLE `entrada_detalle` (
 --
 
 CREATE TABLE `inventario` (
+  `id_inventario` int(11) NOT NULL,
   `cantidad_inicial` int(11) DEFAULT NULL,
   `cantidad_ingresos` int(11) DEFAULT NULL,
   `cantidad_salidas` int(11) DEFAULT NULL,
@@ -116,7 +100,7 @@ CREATE TABLE `inventario` (
   `fecha_inventario` int(11) DEFAULT NULL,
   `tipo_operacion` varchar(80) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -128,10 +112,10 @@ CREATE TABLE `liquidacion` (
   `id_liquidacion` int(11) NOT NULL,
   `tipo` varchar(50) DEFAULT NULL,
   `motivo` varchar(50) DEFAULT NULL,
-  `indemnizacion` varchar(50) DEFAULT NULL,
+  `indemnizacion` int(50) DEFAULT NULL,
   `seguridad_social` varchar(50) DEFAULT NULL,
-  `id_cliente` int(11) DEFAULT NULL
-);
+  `id_empleado` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -148,14 +132,7 @@ CREATE TABLE `obra` (
   `direccion` varchar(80) DEFAULT NULL,
   `terreno_metros` int(11) DEFAULT NULL,
   `id_cliente` int(11) DEFAULT NULL
-);
-
---
--- Volcado de datos para la tabla `obra`
---
-
-INSERT INTO `obra` (`id_obra`, `obra`, `constructora`, `tipo`, `descripcion`, `direccion`, `terreno_metros`, `id_cliente`) VALUES
-(1, 'edificio zenith', 'agros', 'edificio', 'contruccion de un edificio estilo oficina', 'zona franca zantander', 1000, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -169,15 +146,7 @@ CREATE TABLE `producto` (
   `precio_unitario` int(11) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `id_proveedor` int(11) DEFAULT NULL
-);
-
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`id_producto`, `nombre`, `precio_unitario`, `stock`, `id_proveedor`) VALUES
-(1, 'Cierra Electrica', 150200, 20, 6),
-(2, 'Martillo', 50000, 20, 10);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -192,17 +161,7 @@ CREATE TABLE `proveedor` (
   `telefono` int(11) DEFAULT NULL,
   `encargado` varchar(50) DEFAULT NULL,
   `sector` varchar(50) DEFAULT NULL
-);
-
---
--- Volcado de datos para la tabla `proveedor`
---
-
-INSERT INTO `proveedor` (`id_proveedor`, `nombreProveedor`, `direccion`, `telefono`, `encargado`, `sector`) VALUES
-(1, 'Sergio', 'cra321', 9512365, 'nadie', 'pobre'),
-(2, 'Alejandro', 'cra52', 2147483647, 'si?', 'barrio la esperanzza'),
-(3, 'pepe', 'En la Calle', 852741963, 'Dr nadie', 'barrio la esperanzza'),
-(4, 'Luis', 'cra528', 159487263, 'si?', 'barrio bonito');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -219,14 +178,7 @@ CREATE TABLE `salida` (
   `observaciones` varchar(50) DEFAULT NULL,
   `id_cliente` int(11) DEFAULT NULL,
   `id_empleado` int(11) DEFAULT NULL
-);
-
---
--- Volcado de datos para la tabla `salida`
---
-
-INSERT INTO `salida` (`id_salida`, `fecha_salida`, `hora_salida`, `subtotal_peso`, `placa_transporte`, `observaciones`, `id_cliente`, `id_empleado`) VALUES
-(1, '2023-06-17', '07:01', 500, 'OHU94C', 'es una buena salida', 2, 3);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -246,14 +198,21 @@ CREATE TABLE `salida_detalle` (
   `id_producto` int(11) DEFAULT NULL,
   `id_obra` int(11) DEFAULT NULL,
   `id_empleado` int(11) DEFAULT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `salida_detalle`
+-- Estructura de tabla para la tabla `users`
 --
 
-INSERT INTO `salida_detalle` (`cantidad_salida`, `cantidad_propia`, `cantidad_subalquilada`, `valor_unidad`, `fecha_standBy`, `estado`, `valorTotal`, `id_salida`, `id_producto`, `id_obra`, `id_empleado`) VALUES
-(200, 100, 100, 300000, '2023-06-15', 'bueno', 300200, 1, 8, 3, 3);
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `id_empleado` int(11) NOT NULL,
+  `usuario` text NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
+  `tipo_user` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -292,6 +251,7 @@ ALTER TABLE `entrada_detalle`
 -- Indices de la tabla `inventario`
 --
 ALTER TABLE `inventario`
+  ADD PRIMARY KEY (`id_inventario`),
   ADD KEY `id_producto` (`id_producto`);
 
 --
@@ -299,7 +259,7 @@ ALTER TABLE `inventario`
 --
 ALTER TABLE `liquidacion`
   ADD PRIMARY KEY (`id_liquidacion`),
-  ADD KEY `id_cliente` (`id_cliente`);
+  ADD KEY `id_cliente` (`id_empleado`);
 
 --
 -- Indices de la tabla `obra`
@@ -339,6 +299,13 @@ ALTER TABLE `salida_detalle`
   ADD KEY `id_empleado` (`id_empleado`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `id_empleado` (`id_empleado`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -346,19 +313,25 @@ ALTER TABLE `salida_detalle`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
   MODIFY `id_entrada` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `inventario`
+--
+ALTER TABLE `inventario`
+  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `liquidacion`
@@ -370,25 +343,31 @@ ALTER TABLE `liquidacion`
 -- AUTO_INCREMENT de la tabla `obra`
 --
 ALTER TABLE `obra`
-  MODIFY `id_obra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_obra` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_salida` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -420,7 +399,7 @@ ALTER TABLE `inventario`
 -- Filtros para la tabla `liquidacion`
 --
 ALTER TABLE `liquidacion`
-  ADD CONSTRAINT `liquidacion_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`);
+  ADD CONSTRAINT `liquidacion_ibfk_1` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`);
 
 --
 -- Filtros para la tabla `obra`
@@ -446,9 +425,15 @@ ALTER TABLE `salida`
 --
 ALTER TABLE `salida_detalle`
   ADD CONSTRAINT `salida_detalle_ibfk_1` FOREIGN KEY (`id_salida`) REFERENCES `salida` (`id_salida`),
-  ADD CONSTRAINT `salida_detalle_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
-  ADD CONSTRAINT `salida_detalle_ibfk_3` FOREIGN KEY (`id_obra`) REFERENCES `obra` (`id_obra`),
+  ADD CONSTRAINT `salida_detalle_ibfk_2` FOREIGN KEY (`id_obra`) REFERENCES `obra` (`id_obra`),
+  ADD CONSTRAINT `salida_detalle_ibfk_3` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
   ADD CONSTRAINT `salida_detalle_ibfk_4` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`);
+
+--
+-- Filtros para la tabla `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id_empleado`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

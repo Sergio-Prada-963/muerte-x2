@@ -7,40 +7,40 @@ error_reporting(E_ALL);
 ?>
 
 <div>
-    <div class="card-header">
-      <h3 class="card-title">Añadir Cliente</h3>
+  <div class="card-header">
+    <h3 class="card-title">Añadir Cliente</h3>
+  </div>
+  <form action="" method="post">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDocumento">documento</label>
+        <input type="number" class="form-control" id="exampleInputDocumento" placeholder="Ingrese Documento" name="documento">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEdad">Edad</label>
+        <input type="number" class="form-control" id="exampleInputEdad" placeholder="Ingrese Edad" name="edad">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputcorreo">Correo</label>
+        <input type="text" class="form-control" id="exampleInputcorreo" placeholder="Ingrese Correo" name="correo">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDireccion">Direccion</label>
+        <input type="text" class="form-control" id="exampleInputDireccion" placeholder="Ingrese Direccion" name="direccion">
+      </div>
+      <div class="form-check">
+        <input type="submit" class="btn btn-primary" name="guardar" value="Guardar">
+      </div>
     </div>
-    <form action="" method="post">
-        <div class="card-body">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nombre</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Nombre" name="nombre">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputDocumento">documento</label>
-            <input type="number" class="form-control" id="exampleInputDocumento" placeholder="Ingrese Documento" name="documento">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEdad">Edad</label>
-            <input type="number" class="form-control" id="exampleInputEdad" placeholder="Ingrese Edad" name="edad">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputcorreo">Correo</label>
-            <input type="text" class="form-control" id="exampleInputcorreo" placeholder="Ingrese Correo" name="correo">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputDireccion">Direccion</label>
-            <input type="text" class="form-control" id="exampleInputDireccion" placeholder="Ingrese Direccion" name="direccion">
-          </div>
-          <div class="form-check">
-            <input type="submit" class="btn btn-primary" name="guardar" value="Guardar">
-          </div>
-        </div>
-    </form>
+  </form>
 </div>
 
 <?php 
-$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/cliente.php?op=insert"; 
+$url = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [
@@ -49,7 +49,6 @@ $datos = [
     'edad' => $_POST['edad'],
     'correo' => $_POST['correo'],
     'direccion' => $_POST['direccion']
-
 ];
 
 $curl = curl_init();
@@ -60,7 +59,5 @@ $curl = curl_init();
     $response = curl_exec($curl);
     curl_close($curl);
     var_dump($response);
-
-
 }
 ?>

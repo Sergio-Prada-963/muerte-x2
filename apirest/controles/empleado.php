@@ -40,12 +40,12 @@ switch($_GET["op"]){
   
     break; */
 
-    /* case "delete":
+    case "delete":
 
         $datos=$empleado->delete_empleado($body["id_empleado"]);
         echo json_encode("empleado eliminado correctamente");
   
-      break; */
+      break;
 
 }
 

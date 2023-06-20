@@ -1,8 +1,8 @@
 <div>
     <div class="card-header">
-      <h3 class="card-title">Añadir Empleado</h3>
+      <h3 class="card-title">Añadir Proveedor</h3>
     </div>
-    <form action="proveedor.php" method="post">
+    <form action="" method="post">
         <div class="card-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre</label>
@@ -32,7 +32,7 @@
 </div>
 
 <?php 
-$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/proveedor.php?op=insert"; 
+$url = "http://localhost/muerte-x2/apirest/controles/proveedor.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [

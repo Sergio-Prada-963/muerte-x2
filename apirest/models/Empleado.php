@@ -80,16 +80,15 @@ class Empleado extends Conectar{
 
     } */
     
-    /* public function delete_camper($id){
+    public function delete_empleado($id_empleado){
         $conectar=parent::conexion();
         parent::set_name();
-        $sql="DELETE FROM pacientes WHERE id=?";
+        $sql="DELETE FROM empleado WHERE id_empleado=?";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1,$id);
+        $sql->bindValue(1,$id_empleado);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
-
-    } */
+    } 
 
 }
 

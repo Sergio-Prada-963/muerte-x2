@@ -67,16 +67,15 @@ class Proveedor extends Conectar{
 
     // }
     
-    // public function delete_pasicologa($id_cliente){
-    //     $conectar=parent::conexion();
-    //     parent::set_name();
-    //     $sql="DELETE FROM pacientes WHERE id_cliente=?";
-    //     $sql=$conectar->prepare($sql);
-    //     $sql->bindValue(1,$id_cliente);
-    //     $sql->execute();
-    //     return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
-
-    // }
+    public function delete_proveedor($id_proveedor){
+        $conectar=parent::conexion();
+        parent::set_name();
+        $sql="DELETE FROM proveedor WHERE id_proveedor=?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1,$id_proveedor);
+        $sql->execute();
+        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

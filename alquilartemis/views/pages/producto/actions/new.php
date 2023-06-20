@@ -4,7 +4,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$proveedor = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/proveedor.php?op=GetAll";
+$proveedor = "http://localhost/muerte-x2/apirest/controles/proveedor.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $proveedor);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -32,10 +32,10 @@ $idProveedor = json_decode(curl_exec($curl));
           <div class="form-group">
             <label for="id_proveedor">Proveedor</label>
             <select name="id_proveedor" id="proveedor">
+              <option>Seleccione un proveedor</option>
             <?php foreach($idProveedor as $id){ ?>
               <option value="<?= $id->id_proveedor ?>"><?= $id->nombreProveedor ?></option>
             <?php } ?>
-              <option value=""></option>
             </select>
           </div>
           <div class="form-check">
@@ -46,7 +46,7 @@ $idProveedor = json_decode(curl_exec($curl));
 </div>
 
 <?php 
-$url = "http://localhost/xampp/var/www/html/php/muerte-x2/apirest/controles/producto.php?op=insert"; 
+$url = "http://localhost/muerte-x2/apirest/controles/producto.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [

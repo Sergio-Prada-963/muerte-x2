@@ -39,12 +39,10 @@ switch($_GET["op"]){
   
     // break;
 
-    // case "delete":
-
-    //     $datos=$clientes->delete_cliente($body["id_cliente"]);
-    //     echo json_encode("cliente eliminada correctamente");
-  
-    //   break;
+    case "delete":
+        $datos=$proveedor->delete_proveedor($body["id_proveedor"]);
+        echo json_encode("proveedor eliminada correctamente");
+      break;
 
 }
 

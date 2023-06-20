@@ -73,16 +73,15 @@ class SalidaD extends Conectar{
 
     // }
     
-    // public function delete_pasicologa($id_cliente){
-    //     $conectar=parent::conexion();
-    //     parent::set_name();
-    //     $sql="DELETE FROM pacientes WHERE id_cliente=?";
-    //     $sql=$conectar->prepare($sql);
-    //     $sql->bindValue(1,$id_cliente);
-    //     $sql->execute();
-    //     return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
-
-    // }
+    public function delete_salidaD($id_salidaD){
+        $conectar=parent::conexion();
+        parent::set_name();
+        $sql="DELETE FROM salida_detalle WHERE id_salida=?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1,$id_salidaD);
+        $sql->execute();
+        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

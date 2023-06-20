@@ -39,12 +39,10 @@ switch($_GET["op"]){
   
     // break;
 
-    // case "delete":
-
-    //     $datos=$productos->delete_producto($body["id_producto"]);
-    //     echo json_encode("producto eliminada correctamente");
-  
-    //   break;
+    case "delete":
+        $datos=$productos->delete_producto($body["id_producto"]);
+        echo json_encode("producto eliminada correctamente");
+      break;
 
 }
 

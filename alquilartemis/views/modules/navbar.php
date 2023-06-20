@@ -9,7 +9,11 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-
+      <li class="nav-item">
+        <button type="button" class="btn btn-info swalDefaultInfo">
+          Notica...
+        </button>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
