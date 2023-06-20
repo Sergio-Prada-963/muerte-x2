@@ -4,7 +4,7 @@ ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);?>
 
-<?php $empleados = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=GetAll"; 
+<?php $empleados = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $empleados);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -15,7 +15,7 @@ error_reporting(E_ALL);?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login/css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Login</title>
@@ -88,7 +88,7 @@ error_reporting(E_ALL);?>
 </body>
 </html>
 <?php 
-    $url = "http://localhost/muerte-x2/apirest/controles/users.php?op=insert"; 
+    $url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/users.php?op=insert"; 
     if(isset($_POST['registrar'])){
     
     $datos = [
@@ -111,7 +111,7 @@ error_reporting(E_ALL);?>
     }
 ?>
 <?php 
-    $user = "http://localhost/muerte-x2/apirest/controles/users.php?op=GetAll"; 
+    $user = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/users.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $user);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -119,7 +119,10 @@ error_reporting(E_ALL);?>
     if(isset($_POST['ingresar'])){
         foreach($idUser as $id){
             if($id->usuario == $_POST["usuario"] && $id->contraseña == $_POST["contraseña"]){
-                echo "<script> alert('Bienvenido...'); document.location='../../alquilartemis'</script>";
+                echo "<script> alert('Bienvenido...'); </script>";
+                require_once("../controllers/template.controllers.php");
+                $index = new TemplateControllers();
+                $index->template('../views/template.php');
             }
         }
     }

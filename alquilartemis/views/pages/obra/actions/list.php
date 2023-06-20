@@ -1,4 +1,4 @@
-<?php $url = "http://localhost/muerte-x2/apirest/controles/obra.php?op=GetAll"; 
+<?php $url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/obra.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);

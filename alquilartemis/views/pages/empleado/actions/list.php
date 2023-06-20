@@ -4,7 +4,7 @@ ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);?>
 
-<?php $url = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=GetAll"; 
+<?php $url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);

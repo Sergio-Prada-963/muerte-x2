@@ -4,7 +4,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$cliente = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=GetAll";
+$cliente = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/cliente.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $cliente);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -57,7 +57,7 @@ $idCliente = json_decode(curl_exec($curl));
 </div>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/obra.php?op=insert"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/obra.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [

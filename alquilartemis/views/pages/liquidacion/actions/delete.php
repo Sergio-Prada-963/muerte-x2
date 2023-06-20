@@ -1,4 +1,4 @@
-<?php $liquidacion = "http://localhost/muerte-x2/apirest/controles/liquidacion.php?op=GetAll"; 
+<?php $liquidacion = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/liquidacion.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $liquidacion);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);

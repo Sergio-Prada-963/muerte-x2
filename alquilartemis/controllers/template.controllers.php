@@ -1,7 +1,10 @@
 <?php 
 class TemplateControllers{
-    public function index(){
-        include"login/login.php";
+    public function index($include){
+        header('Location: '.$include);
+    }
+    public function template($include){
+        require"$include";
     }
 }
 ?>

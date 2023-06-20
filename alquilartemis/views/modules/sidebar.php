@@ -27,7 +27,7 @@
 
             <li class="nav-item">
                 <!-- /xampp/htdocs/muerte-x2-master/alquilartemis/views/template.php -->
-              <a href="/muerte-x2/alquilartemis/" class="nav-link <?php if($urlArray[3]=='') : ?> active <?php endif ?>">
+              <a href="/SkylAb-145/Proyects/muerte-x2/alquilartemis/" class="nav-link <?php if($urlArray[5]=='') : ?> active <?php endif ?>">
                   <i class="nav-icon far fa-user"></i>
                   <p>
                       Home
@@ -36,7 +36,7 @@
             </li>
             
             <li class="nav-item">
-                <a href="./empleado" class="nav-link <?php if($urlArray[3]=='empleado') : ?> active <?php endif ?>">
+                <a href="./empleado" class="nav-link <?php if($urlArray[5]=='empleado') : ?> active <?php endif ?>">
                     <i class="nav-icon far fa-user"></i>
                     <p>
                         Empleado
@@ -45,7 +45,7 @@
             </li>
           
            <li class="nav-item">
-               <a href="./producto" class="nav-link <?php if($urlArray[3]=='producto') : ?> active <?php endif ?>">
+               <a href="./producto" class="nav-link <?php if($urlArray[5]=='producto') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Productos
@@ -54,7 +54,7 @@
            </li>
 
            <li class="nav-item">
-               <a href="./proveedor" class="nav-link <?php if($urlArray[3]=='proveedor') : ?> active <?php endif ?>">
+               <a href="./proveedor" class="nav-link <?php if($urlArray[5]=='proveedor') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Proveedores
@@ -63,7 +63,7 @@
            </li>
 
            <li class="nav-item">
-               <a href="./cliente" class="nav-link <?php if($urlArray[3]=='cliente') : ?> active <?php endif ?>">
+               <a href="./cliente" class="nav-link <?php if($urlArray[5]=='cliente') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Clientes
@@ -72,7 +72,7 @@
            </li>
 
            <li class="nav-item">
-               <a href="./obra" class="nav-link <?php if($urlArray[3]=='obra') : ?> active <?php endif ?>">
+               <a href="./obra" class="nav-link <?php if($urlArray[5]=='obra') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Obras
@@ -81,7 +81,7 @@
            </li>     
            
            <li class="nav-item">
-               <a href="./inventario" class="nav-link <?php if($urlArray[3]=='inventario') : ?> active <?php endif ?>">
+               <a href="./inventario" class="nav-link <?php if($urlArray[5]=='inventario') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Inventario
@@ -90,7 +90,7 @@
            </li>  
 
            <li class="nav-item">
-               <a href="./liquidacion" class="nav-link <?php if($urlArray[3]=='liquidacion') : ?> active <?php endif ?>">
+               <a href="./liquidacion" class="nav-link <?php if($urlArray[5]=='liquidacion') : ?> active <?php endif ?>">
                    <i class="nav-icon far fa-user"></i>
                    <p>
                        Liquidacion
@@ -108,7 +108,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                   <a href="./salida" class="nav-link <?php if($urlArray[3]=='salidas') : ?> active <?php endif ?>">
+                   <a href="./salida" class="nav-link <?php if($urlArray[5]=='salidas') : ?> active <?php endif ?>">
                        <i class="nav-icon far fa-user"></i>
                        <p>
                            Salidas
@@ -116,13 +116,13 @@
                    </a>
                 </li> 
                 <li class="nav-item">
-                    <a href="./salidaDetalle" class="nav-link <?php if($urlArray[3]=='salidaDetalle') : ?> active <?php endif ?>">
+                    <a href="./salidaDetalle" class="nav-link <?php if($urlArray[5]=='salidaDetalle') : ?> active <?php endif ?>">
                        <i class="nav-icon far fa-user"></i>
                        <p>Salida Detalle</p>
                     </a>
                 </li> 
                 <li class="nav-item">
-                   <a href="./entrada" class="nav-link <?php if($urlArray[3]=='entradas') : ?> active <?php endif ?>">
+                   <a href="./entrada" class="nav-link <?php if($urlArray[5]=='entradas') : ?> active <?php endif ?>">
                        <i class="nav-icon far fa-user"></i>
                        <p>
                            Entradas
@@ -130,7 +130,7 @@
                    </a>
                 </li> 
                 <li class="nav-item">
-                    <a href="./entradaDetalle" class="nav-link <?php if($urlArray[3]=='entradaDetalle') : ?> active <?php endif ?>">
+                    <a href="./entradaDetalle" class="nav-link <?php if($urlArray[5]=='entradaDetalle') : ?> active <?php endif ?>">
                        <i class="nav-icon far fa-user"></i>
                        <p>Entrada Detalle</p>
                     </a>

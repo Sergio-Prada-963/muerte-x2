@@ -40,7 +40,7 @@ error_reporting(E_ALL);
 </div>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=insert"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/cliente.php?op=insert"; 
 if(isset($_POST['guardar'])){
 
 $datos = [

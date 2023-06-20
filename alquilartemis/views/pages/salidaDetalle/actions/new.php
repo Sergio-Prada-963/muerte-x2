@@ -4,10 +4,10 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$salida = "http://localhost/muerte-x2/apirest/controles/salida.php?op=GetAll";
-$producto = "http://localhost/muerte-x2/apirest/controles/producto.php?op=GetAll";
-$obra = "http://localhost/muerte-x2/apirest/controles/obra.php?op=GetAll";
-$empleado = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=GetAll";
+$salida = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/salida.php?op=GetAll";
+$producto = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/producto.php?op=GetAll";
+$obra = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/obra.php?op=GetAll";
+$empleado = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $salida);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -100,7 +100,7 @@ $idEmpleado = json_decode(curl_exec($curl));
 </div>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/salidaDetalle.php?op=insert"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/salidaDetalle.php?op=insert"; 
 if(isset($_POST['guardar'])){
 $total = ($_POST['cantidad_salida'] + $_POST['valor_unidad']);
 $datos = [

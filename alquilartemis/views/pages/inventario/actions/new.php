@@ -4,7 +4,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$producto = "http://localhost/muerte-x2/apirest/controles/producto.php?op=GetAll";
+$producto = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/producto.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $producto);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -58,7 +58,7 @@ $idProducto = json_decode(curl_exec($curl));
 </div>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/inventario.php?op=insert"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/inventario.php?op=insert"; 
 if(isset($_POST['guardar'])){
 $datos = [
     'cantidad_inicial' => $_POST['cantidad_inicial'],

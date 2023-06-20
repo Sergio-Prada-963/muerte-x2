@@ -1,4 +1,4 @@
-<?php $cliente = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=GetAll"; 
+<?php $cliente = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/cliente.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $cliente);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -18,7 +18,7 @@
 </form>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=delete"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/cliente.php?op=delete"; 
 if(isset($_POST['delete'])){
 
 $datos = [

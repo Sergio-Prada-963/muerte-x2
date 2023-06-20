@@ -55,19 +55,19 @@ $urlArray = array_filter($urlArray);
     <!-- Content Header (Page header) -->
     
     <?php 
-    if(!empty($urlArray[3])){
-      if($urlArray[3] == "empleado" ||
-      $urlArray[3] == "producto" ||
-      $urlArray[3] == "proveedor" ||
-      $urlArray[3] == "cliente" ||
-      $urlArray[3] == "salida" ||
-      $urlArray[3] == "salidaDetalle" ||
-      $urlArray[3] == "entrada" ||
-      $urlArray[3] == "entradaDetalle" ||
-      $urlArray[3] == "obra" ||
-      $urlArray[3] == "inventario" ||
-      $urlArray[3] == "liquidacion" ){
-        include "views/pages/".$urlArray[3]."/".$urlArray[3].".php";
+    if(!empty($urlArray[5])){
+      if($urlArray[5] == "empleado" ||
+      $urlArray[5] == "producto" ||
+      $urlArray[5] == "proveedor" ||
+      $urlArray[5] == "cliente" ||
+      $urlArray[5] == "salida" ||
+      $urlArray[5] == "salidaDetalle" ||
+      $urlArray[5] == "entrada" ||
+      $urlArray[5] == "entradaDetalle" ||
+      $urlArray[5] == "obra" ||
+      $urlArray[5] == "inventario" ||
+      $urlArray[5] == "liquidacion" ){
+        include "views/pages/".$urlArray[5]."/".$urlArray[5].".php";
       }
     }else {
       include "views/pages/home/home.php";

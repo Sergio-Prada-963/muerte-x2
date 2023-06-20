@@ -1,4 +1,4 @@
-<?php $proveedor = "http://localhost/muerte-x2/apirest/controles/proveedor.php?op=GetAll"; 
+<?php $proveedor = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/proveedor.php?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $proveedor);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -18,7 +18,7 @@
 </form>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/proveedor.php?op=delete"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/proveedor.php?op=delete"; 
 if(isset($_POST['delete'])){
 
 $datos = [

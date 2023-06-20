@@ -1,4 +1,4 @@
-<?php $empleado = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=GetAll"; 
+<?php $empleado = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll?op=GetAll"; 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $empleado);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -18,7 +18,7 @@
 </form>
 
 <?php 
-$url = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=delete"; 
+$url = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll?op=delete"; 
 if(isset($_POST['delete'])){
 
 $datos = [

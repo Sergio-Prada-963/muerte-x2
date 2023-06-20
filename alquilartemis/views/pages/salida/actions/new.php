@@ -4,13 +4,13 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-$cliente = "http://localhost/muerte-x2/apirest/controles/cliente.php?op=GetAll";
+$cliente = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/cliente.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $cliente);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
 $idCliente = json_decode(curl_exec($curl));
 
-$empleado = "http://localhost/muerte-x2/apirest/controles/empleado.php?op=GetAll";
+$empleado = "http://localhost/SkylAb-145/Proyects/muerte-x2/apirest/controles/empleado.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $empleado);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
